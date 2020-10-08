@@ -29,8 +29,8 @@ namespace kursovaya_bakinykh
             {
                 res += ((char)(text[i] ^ currentKey[i])).ToString();
             }
-
-            return res;
+            byte[] bytes = Encoding.ASCII.GetBytes(res);
+            return Convert.ToBase64String(bytes);
         }
         //шифрование текста сообщения
         public string Encrypt(string plainText, string password)
